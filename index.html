@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sweet Bites | Endulzamos tus Momentos Especiales</title>
     
-    <!-- Tipografías del CMI: DM Sans, Merriweather, Bree Serif -->
+    <!-- Tipografías del CMI -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=DM+Sans:wght@400;500;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* Variables de Color (Extraídas del Manual CMI) */
+        /* Variables de Color */
         :root {
             --rojo-oscuro: #632427;
             --beige: #F5E5D2;
@@ -64,13 +64,12 @@
             text-decoration: none;
         }
 
-        /* Espacio para tu LOGO REAL en la barra de navegación */
         nav .logo-img {
-            height: 50px; /* Ajusta el tamaño según tu logo */
+            height: 50px;
             width: auto;
-            background-color: var(--blanco); /* Fondo blanco por si el logo es transparente */
+            background-color: var(--blanco);
             border-radius: 50%;
-            padding: 3px;
+            padding: 2px;
         }
 
         nav ul {
@@ -94,7 +93,7 @@
         .hero {
             text-align: center;
             padding: 4rem 2rem;
-            background: linear-gradient(rgba(245, 229, 210, 0.9), rgba(245, 229, 210, 0.9)), url('https://images.unsplash.com/photo-1464965911861-746a04b4bca6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(245, 229, 210, 0.95), rgba(245, 229, 210, 0.95)), url('https://images.unsplash.com/photo-1464965911861-746a04b4bca6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -102,11 +101,11 @@
             align-items: center;
         }
 
-        /* Espacio para tu LOGO GRANDE en la portada */
         .hero-logo {
             max-width: 250px;
             margin-bottom: 1.5rem;
-            border-radius: 15px;
+            border-radius: 50%; /* Logo en forma circular */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .hero h1 {
@@ -124,9 +123,100 @@
             font-style: italic;
         }
 
-        /* Sección de Promociones */
+        /* Sección de Productos */
+        .products-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--dorado);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .grid-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background-color: var(--blanco);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            padding-bottom: 1.5rem;
+            border: 2px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+            border-color: var(--dorado);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background-color: var(--beige);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-card h3 {
+            margin: 1rem 0 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .product-card p {
+            padding: 0 1rem;
+            color: #555;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-family: 'Bree Serif', serif;
+            font-size: 1.5rem;
+            color: var(--dorado);
+            font-weight: bold;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .btn-add {
+            background-color: var(--rojo-oscuro);
+            color: var(--beige);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-add:hover {
+            background-color: var(--dorado);
+            color: var(--blanco);
+        }
+
+        /* Sección de Promociones (Movida abajo) */
         .promo-section {
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             background-color: var(--rojo-oscuro);
             color: var(--blanco);
             text-align: center;
@@ -134,7 +224,7 @@
 
         .promo-section h2 {
             color: var(--dorado);
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
         }
 
@@ -144,32 +234,45 @@
             gap: 2rem;
             flex-wrap: wrap;
             margin-top: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .promo-card {
             background-color: var(--beige);
             color: var(--negro);
-            padding: 1.5rem;
+            padding: 2rem 1.5rem;
             border-radius: 15px;
-            width: 300px;
+            width: 320px;
             border: 3px dashed var(--dorado);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .promo-card:hover {
+            transform: scale(1.05);
         }
 
         .promo-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--rojo-oscuro);
         }
 
         .promo-card .promo-desc {
-            font-size: 0.95rem;
+            font-size: 1rem;
             margin-bottom: 1rem;
+            color: #333;
         }
         
         .promo-card .promo-price {
-            font-size: 1.3rem;
+            font-family: 'Bree Serif', serif;
+            font-size: 1.8rem;
             font-weight: bold;
             color: var(--dorado);
+            display: block;
+            margin-bottom: 1rem;
         }
 
         /* Sección Nosotros */
@@ -213,104 +316,38 @@
             text-align: justify;
         }
 
-        /* Sección de Productos */
-        .products-section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--dorado);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
-
-        .grid-products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .product-card {
-            background-color: var(--blanco);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-            padding-bottom: 1.5rem;
-            border: 2px solid transparent;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
-            border-color: var(--dorado);
-        }
-
-        /* Espacio para las FOTOS REALES de los productos */
-        .product-image {
-            width: 100%;
-            height: 250px;
-            background-color: var(--beige);
+        /* Sección de la Mascota (Bity) */
+        .mascot-section {
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--rojo-oscuro);
-            font-size: 3rem;
-            position: relative;
-            overflow: hidden;
+            gap: 3rem;
+            background-color: var(--beige);
+            padding: 4rem 2rem;
+            flex-wrap: wrap;
         }
 
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .mascot-img {
+            max-width: 300px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            background-color: transparent;
+        }
+
+        .mascot-text {
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .mascot-text h2 {
+            text-align: left;
+            color: var(--rojo-oscuro);
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
         }
         
-        .product-image i {
-            opacity: 0.5;
-            position: absolute;
-        }
-
-        .product-card h3 {
-            margin: 1rem 0 0.5rem;
-            font-size: 1.5rem;
-        }
-
-        .product-card p {
-            padding: 0 1rem;
-            color: #555;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .price {
-            font-family: 'Bree Serif', serif;
-            font-size: 1.5rem;
-            color: var(--dorado);
-            font-weight: bold;
-            display: block;
-            margin-bottom: 1rem;
-        }
-
-        .btn-add {
-            background-color: var(--rojo-oscuro);
-            color: var(--beige);
-            border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            cursor: pointer;
-            font-family: 'DM Sans', sans-serif;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .btn-add:hover {
-            background-color: var(--dorado);
-            color: var(--blanco);
+        .mascot-text p {
+            font-size: 1.1rem;
         }
 
         /* Sección de Pedidos */
@@ -368,7 +405,7 @@
         }
 
         .btn-submit {
-            background-color: #25D366; /* Color oficial de WhatsApp */
+            background-color: #25D366; /* Color de WhatsApp */
             color: var(--blanco);
             border: none;
             padding: 1rem 2rem;
@@ -388,35 +425,6 @@
         .btn-submit:hover {
             background-color: #1ebe5d;
             transform: scale(1.02);
-        }
-
-        /* Sección de la Mascota (Bity) */
-        .mascot-section {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            background-color: var(--beige);
-            padding: 3rem 2rem;
-            flex-wrap: wrap;
-        }
-
-        .mascot-img {
-            max-width: 250px;
-            border-radius: 50%;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-            background-color: white;
-        }
-
-        .mascot-text {
-            max-width: 500px;
-            text-align: left;
-        }
-
-        .mascot-text h2 {
-            text-align: left;
-            color: var(--rojo-oscuro);
-            margin-bottom: 1rem;
         }
 
         /* Footer / Redes Sociales */
@@ -465,47 +473,103 @@
     <!-- Navegación -->
     <nav>
         <a href="#" class="logo-container">
-            <!-- REEMPLAZA EL SRC CON LA RUTA DE TU LOGO -->
-            <img src="https://i.ibb.co/6PZq6Z8/sweet-bites-logo.png" alt="Logo Sweet Bites" class="logo-img" onerror="this.src='https://placehold.co/100x100/632427/F5E5D2?text=SB'">
+            <!-- Logo insertado desde el documento -->
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23F5E5D2'/><text x='50' y='55' font-family='serif' font-size='20' fill='%23632427' text-anchor='middle'>SB</text></svg>" alt="Logo Sweet Bites" class="logo-img" id="nav-logo">
             <span style="color: var(--beige); font-family: 'Merriweather', serif; font-weight: bold;">Sweet Bites</span>
         </a>
         <ul>
             <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
             <li><a href="#promociones">Promociones</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#productos">Productos</a></li>
             <li><a href="#pedidos">Hacer Pedido</a></li>
         </ul>
     </nav>
 
     <!-- Hero Section -->
     <header class="hero" id="inicio">
-        <!-- REEMPLAZA EL SRC CON LA RUTA DE TU LOGO GRANDE -->
-        <img src="https://i.ibb.co/6PZq6Z8/sweet-bites-logo.png" alt="Sweet Bites Logo Grande" class="hero-logo" onerror="this.src='https://placehold.co/400x200/F5E5D2/632427?text=Endulzando+tus+momentos'">
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><circle cx='100' cy='100' r='95' fill='%23F5E5D2' stroke='%23632427' stroke-width='2'/><text x='100' y='110' font-family='serif' font-size='30' fill='%23632427' text-anchor='middle'>Sweet Bites</text></svg>" alt="Sweet Bites Logo Grande" class="hero-logo" id="hero-logo">
         <h1>Endulzamos tus Momentos Especiales</h1>
         <p>"Cada bocado es fresco, delicioso y seguro; cada entrega llega a tiempo; cada experiencia se siente especial y cuidada como si fuera hecha en casa."</p>
     </header>
 
-    <!-- Sección de Promociones -->
+    <!-- Sección de Productos (Primero) -->
+    <section class="products-section" id="productos">
+        <h2 class="section-title">Nuestros Antojos</h2>
+        <div class="grid-products">
+            
+            <!-- Producto 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23F5E5D2'/><text x='150' y='100' font-family='sans-serif' font-size='20' fill='%23632427' text-anchor='middle'>Fresas con Crema</text></svg>" alt="Fresas con Crema" id="img-fresas">
+                </div>
+                <h3>Fresas con Crema</h3>
+                <p>Fresas reales, crema deliciosa y toppings coloridos para alegrar tu día.</p>
+                <span class="price">Q35.00</span>
+                <button class="btn-add" onclick="seleccionarProducto('Fresas con crema')">Pedir ahora</button>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23F5E5D2'/><text x='150' y='100' font-family='sans-serif' font-size='20' fill='%23632427' text-anchor='middle'>Mini Panqueques</text></svg>" alt="Mini Panqueques" id="img-panqueques">
+                </div>
+                <h3>Mini Panqueques</h3>
+                <p>Suaves, bañados en chocolate y decorados. Perfectos para compartir.</p>
+                <span class="price">Q25.00</span>
+                <button class="btn-add" onclick="seleccionarProducto('Mini panqueques')">Pedir ahora</button>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23F5E5D2'/><text x='150' y='100' font-family='sans-serif' font-size='20' fill='%23632427' text-anchor='middle'>Brochetas</text></svg>" alt="Brochetas" id="img-brochetas">
+                </div>
+                <h3>Brochetas Especiales</h3>
+                <p>Brochetas de mini panqueques con fresa y deliciosos toppings.</p>
+                <span class="price">Q20.00</span>
+                <button class="btn-add" onclick="seleccionarProducto('Brochetas')">Pedir ahora</button>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect width='300' height='200' fill='%23F5E5D2'/><text x='150' y='100' font-family='sans-serif' font-size='20' fill='%23632427' text-anchor='middle'>Waffles</text></svg>" alt="Waffles" id="img-waffles">
+                </div>
+                <h3>Waffles Crujientes</h3>
+                <p>Recién horneados, con toppings a elección y el toque dulce perfecto.</p>
+                <span class="price">Q30.00</span>
+                <button class="btn-add" onclick="seleccionarProducto('Waffles')">Pedir ahora</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sección de Promociones (Después de los productos) -->
     <section class="promo-section" id="promociones">
         <h2><i class="fa-solid fa-tags"></i> Promociones Especiales</h2>
-        <p>Aprovecha nuestras ofertas por tiempo limitado y endulza tu día.</p>
+        <p>Comparte el sabor de Sweet Bites con nuestros combos exclusivos.</p>
         
         <div class="promo-grid">
             <div class="promo-card">
                 <h3>Combo Sweet</h3>
-                <p class="promo-desc">Fresas con crema + Topping extra.</p>
-                <span class="promo-price">¡Precio Especial!</span>
+                <p class="promo-desc">Fresas con crema + 1 Brocheta</p>
+                <span class="promo-price">Q50.00</span>
+                <button class="btn-add" onclick="seleccionarProducto('Combo Sweet')">Pedir Combo</button>
             </div>
+            
             <div class="promo-card">
                 <h3>Combo Bites</h3>
-                <p class="promo-desc">Mini panqueques + Fresas con crema.</p>
-                <span class="promo-price">Ideal para compartir</span>
+                <p class="promo-desc">Mini panqueques + Fresas con crema <br><strong>¡Envío Gratis!</strong></p>
+                <span class="promo-price">Q60.00</span>
+                <button class="btn-add" onclick="seleccionarProducto('Combo Bites')">Pedir Combo</button>
             </div>
+            
             <div class="promo-card">
-                <h3>Descuento Especial</h3>
-                <p class="promo-desc">10% de descuento presentando tu carnet del aniversario de Ciencias Económicas.</p>
-                <span class="promo-price">¡Solo por este mes!</span>
+                <h3>Combo Especial</h3>
+                <p class="promo-desc">Fresas con crema + Mini panqueques + Waffles</p>
+                <span class="promo-price">Q80.00</span>
+                <button class="btn-add" onclick="seleccionarProducto('Combo Especial')">Pedir Combo</button>
             </div>
         </div>
     </section>
@@ -547,75 +611,15 @@
 
     <!-- Sección de la Mascota (Bity) -->
     <section class="mascot-section">
-        <!-- REEMPLAZA EL SRC CON LA RUTA DE TU MASCOTA (Bity) -->
-        <img src="https://i.ibb.co/3s4VwJk/bity-mascota.png" alt="Bity la mascota de Sweet Bites" class="mascot-img" onerror="this.src='https://placehold.co/250x250/F5E5D2/632427?text=Aqui+va+Bity'">
+        <!-- Mascota insertada -->
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'><circle cx='150' cy='150' r='140' fill='%23e74c3c'/><circle cx='110' cy='130' r='10' fill='white'/><circle cx='190' cy='130' r='10' fill='white'/><circle cx='110' cy='130' r='4' fill='black'/><circle cx='190' cy='130' r='4' fill='black'/><path d='M 120 180 Q 150 210 180 180' stroke='black' stroke-width='4' fill='none'/><text x='150' y='260' font-family='sans-serif' font-size='20' fill='%23333' text-anchor='middle'>¡Hola, soy Bity!</text></svg>" alt="Bity la mascota" class="mascot-img" id="img-mascota">
         <div class="mascot-text">
             <h2>¡Hola! Soy Bity</h2>
             <p>Tu amiguito de Sweet Bites. Estoy aquí para recordarte que hasta el antojo más pequeño merece convertirse en un recuerdo feliz. ¡Déjame prepararte algo delicioso con mi toque especial!</p>
         </div>
     </section>
 
-    <!-- Sección de Productos -->
-    <section class="products-section" id="productos">
-        <h2 class="section-title">Nuestros Antojos</h2>
-        <div class="grid-products">
-            
-            <!-- Producto 1 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <!-- REEMPLAZA EL SRC CON LA FOTO DE TUS FRESAS CON CREMA -->
-                    <i class="fa-solid fa-ice-cream"></i>
-                    <img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Fresas con crema" onerror="this.style.display='none'">
-                </div>
-                <h3>Fresas con Crema</h3>
-                <p>Fresas reales, crema deliciosa y toppings coloridos para alegrar tu día.</p>
-                <span class="price">Q35.00</span>
-                <button class="btn-add" onclick="seleccionarProducto('Fresas con crema')">Pedir ahora</button>
-            </div>
-
-            <!-- Producto 2 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <!-- REEMPLAZA EL SRC CON LA FOTO DE TUS MINI PANQUEQUES -->
-                    <i class="fa-solid fa-cookie-bite"></i>
-                    <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Mini panqueques" onerror="this.style.display='none'">
-                </div>
-                <h3>Mini Panqueques</h3>
-                <p>Suaves, bañados en chocolate y decorados. Perfectos para compartir.</p>
-                <span class="price">Q25.00</span>
-                <button class="btn-add" onclick="seleccionarProducto('Mini panqueques')">Pedir ahora</button>
-            </div>
-
-            <!-- Producto 3 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <!-- REEMPLAZA EL SRC CON LA FOTO DE TUS BROCHETAS -->
-                    <i class="fa-solid fa-utensils"></i>
-                    <img src="https://images.unsplash.com/photo-1549488344-c71c4c4c6c6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Brochetas" onerror="this.style.display='none'">
-                </div>
-                <h3>Brochetas Especiales</h3>
-                <p>Brochetas de mini panqueques con fresa y deliciosos toppings.</p>
-                <span class="price">Q20.00</span>
-                <button class="btn-add" onclick="seleccionarProducto('Brochetas')">Pedir ahora</button>
-            </div>
-
-            <!-- Producto 4 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <!-- REEMPLAZA EL SRC CON LA FOTO DE TUS WAFFLES -->
-                    <i class="fa-solid fa-border-all"></i>
-                    <img src="https://images.unsplash.com/photo-1562376552-0d160a2f238d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Waffles" onerror="this.style.display='none'">
-                </div>
-                <h3>Waffles Crujientes</h3>
-                <p>Recién horneados, con toppings a elección y el toque dulce perfecto.</p>
-                <span class="price">Q30.00</span>
-                <button class="btn-add" onclick="seleccionarProducto('Waffles')">Pedir ahora</button>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Sección de Pedidos (Formulario corregido) -->
+    <!-- Sección de Pedidos -->
     <section class="order-section" id="pedidos">
         <div class="order-container">
             <h2>Haz tu Pedido</h2>
@@ -631,12 +635,14 @@
                 <div class="form-group">
                     <label for="producto">¿Qué se te antoja hoy?</label>
                     <select id="producto" name="producto" required>
-                        <option value="" disabled selected>Selecciona un producto</option>
+                        <option value="" disabled selected>Selecciona un producto o combo</option>
                         <option value="Fresas con crema (Q35.00)">Fresas con crema (Q35.00)</option>
                         <option value="Mini panqueques (Q25.00)">Mini panqueques (Q25.00)</option>
                         <option value="Brochetas (Q20.00)">Brochetas (Q20.00)</option>
                         <option value="Waffles (Q30.00)">Waffles (Q30.00)</option>
-                        <option value="Combo Especial">Combo Especial</option>
+                        <option value="Combo Sweet (Q50.00)">Combo Sweet (Q50.00)</option>
+                        <option value="Combo Bites (Q60.00 + Envío Gratis)">Combo Bites (Q60.00 + Envío Gratis)</option>
+                        <option value="Combo Especial (Q80.00)">Combo Especial (Q80.00)</option>
                     </select>
                 </div>
 
@@ -690,7 +696,18 @@
 
     <!-- Scripts -->
     <script>
-        // Función para seleccionar producto desde las tarjetas
+        // ----------------------------------------------------
+        // INSTRUCCIONES PARA PONER TUS IMÁGENES REALES:
+        // Como no puedo extraer las fotos del archivo Word, he puesto 
+        // marcadores de posición (SVG). Para poner las fotos reales:
+        // 1. Guarda las fotos de tu documento en la misma carpeta que este archivo HTML.
+        // 2. Busca los IDs: 'nav-logo', 'hero-logo', 'img-fresas', 'img-panqueques', 
+        //    'img-brochetas', 'img-waffles', e 'img-mascota'.
+        // 3. Cambia el enlace largo que empieza con "data:image/svg+xml..." por el 
+        //    nombre de tu archivo. Ejemplo: src="logo.png" o src="fresas.jpg".
+        // ----------------------------------------------------
+
+        // Función para seleccionar producto desde las tarjetas y bajar al formulario
         function seleccionarProducto(nombreProducto) {
             document.getElementById('pedidos').scrollIntoView({ behavior: 'smooth' });
             const select = document.getElementById('producto');
@@ -702,48 +719,9 @@
             }
         }
 
-        // Capturar el formulario y enviar a WhatsApp (Método corregido)
+        // Capturar el formulario y enviar a WhatsApp
         document.getElementById('orderForm').addEventListener('submit', function(e) {
             e.preventDefault(); // Evita que la página se recargue
 
             // Obtener los valores
             const nombre = document.getElementById('nombre').value;
-            const producto = document.getElementById('producto').value;
-            const cantidad = document.getElementById('cantidad').value;
-            const direccion = document.getElementById('direccion').value;
-            const fechaInput = document.getElementById('fecha').value;
-            const notas = document.getElementById('notas').value || "Ninguna";
-
-            // Formatear la fecha para que se vea bonita (opcional)
-            let fechaFormateada = fechaInput;
-            if (fechaInput) {
-                const fechaObj = new Date(fechaInput);
-                fechaFormateada = fechaObj.toLocaleString('es-GT', { dateStyle: 'short', timeStyle: 'short' });
-            }
-
-            // Número de destino (502 = Código de Guatemala)
-            const numeroWhatsApp = "50255706564"; 
-
-            // Construir el mensaje usando saltos de línea reales (\n)
-            const mensaje = ¡Hola Sweet Bites! 🍓 Quisiera hacer el siguiente pedido:\n\n +
-                            👤 *Nombre:* ${nombre}\n +
-                            🍰 *Producto:* ${producto}\n +
-                            🔢 *Cantidad:* ${cantidad}\n +
-                            📍 *Dirección:* ${direccion}\n +
-                            📅 *Fecha/Hora:* ${fechaFormateada}\n +
-                            📝 *Notas:* ${notas}\n\n +
-                            ¡Gracias!;
-
-            // Codificar el mensaje para que sea válido en una URL
-            const mensajeCodificado = encodeURIComponent(mensaje);
-
-            // Crear la URL de WhatsApp
-            const url = https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado};
-
-            // Redirigir al usuario a WhatsApp. 
-            // Usamos window.location.href en lugar de window.open para evitar bloqueadores de ventanas emergentes.
-            window.location.href = url;
-        });
-    </script>
-</body>
-</html>
