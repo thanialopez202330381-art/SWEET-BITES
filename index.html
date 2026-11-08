@@ -565,7 +565,7 @@
             const notas = document.getElementById('notas').value || "Ninguna";
 
             // Número de WhatsApp destino (Código de país 502 de Guatemala + número del CMI)
-            // Se quitan los guiones del 5570-6564 para que funcione
+            // Se quitan los guiones del 55706564 para que funcione
             const numeroWhatsApp = "50255706564"; 
 
             // Construir el mensaje con saltos de línea (%0A)
@@ -578,7 +578,7 @@
                             *Notas:* ${notas};
 
             // Crear la URL de WhatsApp y abrirla en una nueva pestaña
-            const url = https://wa.me/${numeroWhatsApp}?text=${mensaje};
+            const url = https://wa.me/50255706564?text=${mensaje};
             window.open(url, '_blank');
             
             // Opcional: Limpiar el formulario después de enviar
