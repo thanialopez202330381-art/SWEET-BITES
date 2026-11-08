@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Bites | Endulzamos tus Momentos Especiales</title>
+    
+    <!-- Tipografías del CMI: DM Sans, Merriweather, Bree Serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=DM+Sans:wght@400;500;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Variables de Color (Extraídas del Manual CMI) */
+        :root {
+            --rojo-oscuro: #632427;
+            --beige: #F5E5D2;
+            --dorado: #BF9251;
+            --negro: #000000;
+            --blanco: #FFFFFF;
+        }
+
+        /* Estilos Generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--beige);
+            color: var(--negro);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Bree Serif', serif;
+            color: var(--rojo-oscuro);
+            text-align: center;
+        }
+
+        /* Navegación */
+        nav {
+            background-color: var(--rojo-oscuro);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        nav .logo-text {
+            color: var(--beige);
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: var(--beige);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--dorado);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(rgba(245, 229, 210, 0.9), rgba(245, 229, 210, 0.9)), url('https://images.unsplash.com/photo-1464965911861-746a04b4bca6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--rojo-oscuro);
+        }
+
+        .hero p {
+            font-family: 'Merriweather', serif;
+            font-size: 1.2rem;
+            color: var(--negro);
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        /* Sección de Productos */
+        .products-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--dorado);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .grid-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background-color: var(--blanco);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            padding-bottom: 1.5rem;
+            border: 2px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+            border-color: var(--dorado);
+        }
+
+        /* Simulando las imágenes del documento */
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background-color: var(--beige);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--rojo-oscuro);
+            font-size: 3rem;
+            position: relative;
+        }
+        
+        /* Si tienes las imágenes locales, puedes usar <img> en lugar del div. Aquí uso íconos como placeholder estético */
+        .product-image i {
+            opacity: 0.5;
+        }
+
+        .product-card h3 {
+            margin: 1rem 0 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .product-card p {
+            padding: 0 1rem;
+            color: #555;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-family: 'Bree Serif', serif;
+            font-size: 1.5rem;
+            color: var(--dorado);
+            font-weight: bold;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .btn-add {
+            background-color: var(--rojo-oscuro);
+            color: var(--beige);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-add:hover {
+            background-color: var(--dorado);
+            color: var(--blanco);
+        }
+
+        /* Sección de Pedidos */
+        .order-section {
+            background-color: var(--rojo-oscuro);
+            padding: 4rem 2rem;
+            color: var(--beige);
+        }
+
+        .order-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--blanco);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .order-container h2 {
+            color: var(--rojo-oscuro);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--negro);
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--beige);
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            background-color: #fafafa;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--dorado);
+        }
+
+        .btn-submit {
+            background-color: var(--dorado);
+            color: var(--blanco);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 100%;
+            font-family: 'Bree Serif', serif;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #a37b42;
+        }
+
+        /* Footer / Redes Sociales */
+        footer {
+            background-color: var(--negro);
+            color: var(--beige);
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 1.5rem 0;
+        }
+
+        .social-links a {
+            color: var(--beige);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--dorado);
+        }
+
+        .footer-info p {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        /* Diseño Responsivo */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            nav ul { display: none; } /* Simplificado para móvil */
+            .order-container { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <nav>
+        <a href="#" class="logo-text">
+            <i class="fa-solid fa-strawberry"></i> Sweet Bites
+        </a>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#pedidos">Hacer Pedido</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section (Mensaje Central) -->
+    <header class="hero" id="inicio">
+        <h1>Endulzamos tus Momentos Especiales</h1>
+        <p>"Cada bocado es fresco, delicioso y seguro; cada entrega llega a tiempo; cada experiencia se siente especial y cuidada como si fuera hecha en casa."</p>
+    </header>
+
+    <!-- Sección de Productos -->
+    <section class="products-section" id="productos">
+        <h2 class="section-title">Nuestros Antojos</h2>
+        <div class="grid-products">
+            
+            <!-- Producto 1: Fresas con crema -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fa-solid fa-ice-cream"></i> <!-- Placeholder visual -->
+                </div>
+                <h3>Fresas con Crema</h3>
+                <p>Fresas reales, crema deliciosa y toppings coloridos para alegrar tu día.</p>
+                <span class="price">Q35.00</span>
+                <button class="btn-add" onclick="seleccionarProducto('Fresas con crema')">Pedir ahora</button>
+            </div>
+
+            <!-- Producto 2: Mini panqueques -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fa-solid fa-cookie-bite"></i>
+                </div>
+                <h3>Mini Panqueques</h3>
+                <p>Suaves, bañados en chocolate y decorados. Perfectos para compartir.</p>
+                <span class="price">Q25.00</span>
+                <button class="btn-add" onclick="seleccionarProducto('Mini panqueques')">Pedir ahora</button>
+            </div>
+
+            <!-- Producto 3: Brochetas -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <h3>Brochetas Especiales</h3>
+                <p>Brochetas de mini panqueques con fresa y deliciosos toppings.</p>
+                <span class="price">Q20.00</span>
+                <button class="btn-add" onclick="seleccionarProducto('Brochetas')">Pedir ahora</button>
+            </div>
+
+            <!-- Producto 4: Waffles -->
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fa-solid fa-border-all"></i>
+                </div>
+                <h3>Waffles Crujientes</h3>
+                <p>Recién horneados, con toppings a elección y el toque dulce perfecto.</p>
+                <span class="price">Q30.00</span>
+                <button class="btn-add" onclick="seleccionarProducto('Waffles')">Pedir ahora</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sección de Pedidos (Formulario) -->
+    <section class="order-section" id="pedidos">
+        <div class="order-container">
+            <h2>Haz tu Pedido</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #555;">Completa el formulario y nos comunicaremos contigo por WhatsApp para confirmar tu entrega.</p>
+            
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('¡Gracias por tu pedido! Nos comunicaremos contigo pronto para confirmar.');">
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ej. Claudia Sacché">
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Número de Teléfono / WhatsApp:</label>
+                    <input type="tel" id="telefono" name="telefono" required placeholder="Ej. 5570-6564">
+                </div>
+
+                <div class="form-group">
+                    <label for="producto">¿Qué se te antoja hoy?</label>
+                    <select id="producto" name="producto" required>
+                        <option value="" disabled selected>Selecciona un producto</option>
+                        <option value="Fresas con crema">Fresas con crema (Q35.00)</option>
+                        <option value="Mini panqueques">Mini panqueques (Q25.00)</option>
+                        <option value="Brochetas">Brochetas (Q20.00)</option>
+                        <option value="Waffles">Waffles (Q30.00)</option>
+                        <option value="Combo Especial">Combo Especial (Fresas + Panqueques + Waffles)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" id="cantidad" name="cantidad" min="1" value="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="direccion">Dirección de Entrega (Quetzaltenango y alrededores):</label>
+                    <textarea id="direccion" name="direccion" rows="3" required placeholder="Calle, avenida, número de casa, zona..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha">Fecha y Hora deseada:</label>
+                    <input type="datetime-local" id="fecha" name="fecha" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="notas">Notas adicionales (Toppings, dedicatoria, etc.):</label>
+                    <textarea id="notas" name="notas" rows="2" placeholder="Ej. Quiero el waffle con extra chocolate."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">¡Endulza mi Momento!</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer y Redes Sociales -->
+    <footer>
+        <h2 style="color: var(--dorado); margin-bottom: 1rem;">Sweet Bites</h2>
+        <p>Endulzando tus momentos especiales</p>
+        
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/1ErtqsGVip/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/sweetbites.dulce?stkn=MW45bDluaTJmZ3YwNg==" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com/@sweet_bite021" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://wa.me/50255706564" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+
+        <div class="footer-info">
+            <p><i class="fa-solid fa-envelope"></i> Bitessweet56@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i> 5570-6564 / 5816-9879</p>
+            <p><i class="fa-solid fa-location-dot"></i> Quetzaltenango, Guatemala</p>
+            <br>
+            <p style="font-size: 0.8rem; opacity: 0.7;">&copy; 2024 Sweet Bites. Todos los derechos reservados. Creado con base en el Manual CMI.</p>
+        </div>
+    </footer>
+
+    <!-- Script simple para que los botones de producto rellenen el formulario -->
+    <script>
+        function seleccionarProducto(nombreProducto) {
+            // Desplazarse a la sección de pedidos
+            document.getElementById('pedidos').scrollIntoView({ behavior: 'smooth' });
+            
+            // Seleccionar el producto en el menú desplegable
+            const select = document.getElementById('producto');
+            for (let i = 0; i < select.options.length; i++) {
+                if (select.options[i].text.includes(nombreProducto)) {
+                    select.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>       
