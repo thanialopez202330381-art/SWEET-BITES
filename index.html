@@ -21,6 +21,7 @@
             --dorado: #BF9251;
             --negro: #000000;
             --blanco: #FFFFFF;
+            --gris-claro: #f9f9f9;
         }
 
         /* Estilos Generales */
@@ -88,7 +89,7 @@
         .hero {
             text-align: center;
             padding: 4rem 2rem;
-            background: linear-gradient(rgba(245, 229, 210, 0.9), rgba(245, 229, 210, 0.9)), url('https://images.unsplash.com/photo-1464965911861-746a04b4bca6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(245, 229, 210, 0.85), rgba(245, 229, 210, 0.85)), url('https://images.unsplash.com/photo-1464965911861-746a04b4bca6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
         }
@@ -106,6 +107,47 @@
             max-width: 800px;
             margin: 0 auto;
             font-style: italic;
+        }
+
+        /* Nueva Sección: Nosotros (Historia, Misión, Visión, Valores) */
+        .about-section {
+            padding: 4rem 2rem;
+            background-color: var(--blanco);
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .about-card {
+            background-color: var(--gris-claro);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--dorado);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .about-card h3 {
+            text-align: left;
+            margin-bottom: 1rem;
+            color: var(--rojo-oscuro);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about-card p {
+            color: #444;
+            font-size: 1rem;
+            text-align: justify;
         }
 
         /* Sección de Productos */
@@ -145,7 +187,6 @@
             border-color: var(--dorado);
         }
 
-        /* Simulando las imágenes del documento */
         .product-image {
             width: 100%;
             height: 250px;
@@ -158,7 +199,6 @@
             position: relative;
         }
         
-        /* Si tienes las imágenes locales, puedes usar <img> en lugar del div. Aquí uso íconos como placeholder estético */
         .product-image i {
             opacity: 0.5;
         }
@@ -219,7 +259,13 @@
 
         .order-container h2 {
             color: var(--rojo-oscuro);
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .order-container p {
+            text-align: center;
+            margin-bottom: 2rem; 
+            color: #555;
         }
 
         .form-group {
@@ -260,6 +306,10 @@
             width: 100%;
             font-family: 'Bree Serif', serif;
             transition: background 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
         }
 
         .btn-submit:hover {
@@ -299,8 +349,9 @@
         /* Diseño Responsivo */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
-            nav ul { display: none; } /* Simplificado para móvil */
+            nav ul { display: none; }
             .order-container { padding: 1.5rem; }
+            .about-grid { grid-template-columns: 1fr; } /* Una columna en móviles */
         }
     </style>
 </head>
@@ -313,6 +364,7 @@
         </a>
         <ul>
             <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
             <li><a href="#productos">Productos</a></li>
             <li><a href="#pedidos">Hacer Pedido</a></li>
         </ul>
@@ -324,6 +376,42 @@
         <p>"Cada bocado es fresco, delicioso y seguro; cada entrega llega a tiempo; cada experiencia se siente especial y cuidada como si fuera hecha en casa."</p>
     </header>
 
+    <!-- Sección Nosotros (Historia, Misión, Visión, Valores) -->
+    <section class="about-section" id="nosotros">
+        <div class="about-container">
+            <h2 class="section-title" style="text-align: center; color: var(--rojo-oscuro);">Nuestra Esencia</h2>
+            
+            <div class="about-card" style="margin-bottom: 2rem; border-left-color: var(--rojo-oscuro);">
+                <h3><i class="fa-solid fa-book-open"></i> Nuestra Historia</h3>
+                <p>Sweet Bites nació en Quetzaltenango con el sueño de crear postres que no solo fueran deliciosos, sino que también representaran frescura, higiene y cariño en cada detalle. Al observar que la oferta local carecía de presentaciones creativas y puntualidad, decidimos combinar la frescura de la fruta real con presentaciones innovadoras en brochetas, waffles y fresas con crema. Hoy, seguimos trabajando con productores locales, elaborando todo al momento y llevando alegría a cada celebración o antojo cotidiano.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3><i class="fa-solid fa-bullseye"></i> Misión</h3>
+                    <p>Ofrecer postres frescos, creativos e higiénicos elaborados con ingredientes de calidad, brindando un servicio puntual y cercano que transforme un simple antojo en un momento especial para nuestros clientes en Quetzaltenango y sus alrededores.</p>
+                </div>
+                
+                <div class="about-card">
+                    <h3><i class="fa-solid fa-eye"></i> Visión</h3>
+                    <p>Ser reconocidos como la opción favorita de postres frescos y creativos en la región, destacándonos por nuestra calidad, innovación visual, transparencia en el servicio y por generar experiencias memorables que fortalezcan la confianza y fidelidad de nuestros clientes.</p>
+                </div>
+            </div>
+
+            <div class="about-card" style="margin-top: 2rem;">
+                <h3><i class="fa-solid fa-heart"></i> Nuestros Valores</h3>
+                <ul style="list-style-type: none; padding-left: 0; color: #444;">
+                    <li style="margin-bottom: 10px;"><strong><i class="fa-solid fa-check" style="color: var(--dorado);"></i> Frescura y Calidad:</strong> Usamos fruta real e ingredientes de primera, preparando cada pedido al momento.</li>
+                    <li style="margin-bottom: 10px;"><strong><i class="fa-solid fa-check" style="color: var(--dorado);"></i> Higiene y Confianza:</strong> Mantenemos estándares estrictos de limpieza para garantizar la seguridad de cada bocado.</li>
+                    <li style="margin-bottom: 10px;"><strong><i class="fa-solid fa-check" style="color: var(--dorado);"></i> Puntualidad:</strong> Respetamos el tiempo de nuestros clientes, cumpliendo con las entregas prometidas.</li>
+                    <li style="margin-bottom: 10px;"><strong><i class="fa-solid fa-check" style="color: var(--dorado);"></i> Cercanía y Transparencia:</strong> Ofrecemos un trato amable, honesto y cálido, mostrando siempre la realidad de lo que ofrecemos.</li>
+                    <li style="margin-bottom: 10px;"><strong><i class="fa-solid fa-check" style="color: var(--dorado);"></i> Alegría:</strong> Creemos que los pequeños detalles pueden alegrar el día, por eso ponemos amor en cada preparación.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Sección de Productos -->
     <section class="products-section" id="productos">
         <h2 class="section-title">Nuestros Antojos</h2>
@@ -332,7 +420,7 @@
             <!-- Producto 1: Fresas con crema -->
             <div class="product-card">
                 <div class="product-image">
-                    <i class="fa-solid fa-ice-cream"></i> <!-- Placeholder visual -->
+                    <i class="fa-solid fa-ice-cream"></i>
                 </div>
                 <h3>Fresas con Crema</h3>
                 <p>Fresas reales, crema deliciosa y toppings coloridos para alegrar tu día.</p>
@@ -376,22 +464,17 @@
         </div>
     </section>
 
-    <!-- Sección de Pedidos (Formulario) -->
+    <!-- Sección de Pedidos (Formulario vinculado a WhatsApp) -->
     <section class="order-section" id="pedidos">
         <div class="order-container">
             <h2>Haz tu Pedido</h2>
-            <p style="text-align: center; margin-bottom: 2rem; color: #555;">Completa el formulario y nos comunicaremos contigo por WhatsApp para confirmar tu entrega.</p>
+            <p>Completa el formulario y presiona "Enviar por WhatsApp". Se abrirá tu aplicación con los detalles listos para enviar al <strong>5570-6564</strong>.</p>
             
-            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('¡Gracias por tu pedido! Nos comunicaremos contigo pronto para confirmar.');">
+            <form id="orderForm">
                 
                 <div class="form-group">
                     <label for="nombre">Nombre Completo:</label>
                     <input type="text" id="nombre" name="nombre" required placeholder="Ej. Claudia Sacché">
-                </div>
-
-                <div class="form-group">
-                    <label for="telefono">Número de Teléfono / WhatsApp:</label>
-                    <input type="tel" id="telefono" name="telefono" required placeholder="Ej. 5570-6564">
                 </div>
 
                 <div class="form-group">
@@ -412,8 +495,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="direccion">Dirección de Entrega (Quetzaltenango y alrededores):</label>
-                    <textarea id="direccion" name="direccion" rows="3" required placeholder="Calle, avenida, número de casa, zona..."></textarea>
+                    <label for="direccion">Dirección de Entrega:</label>
+                    <textarea id="direccion" name="direccion" rows="2" required placeholder="Calle, avenida, zona en Quetzaltenango..."></textarea>
                 </div>
 
                 <div class="form-group">
@@ -426,7 +509,9 @@
                     <textarea id="notas" name="notas" rows="2" placeholder="Ej. Quiero el waffle con extra chocolate."></textarea>
                 </div>
 
-                <button type="submit" class="btn-submit">¡Endulza mi Momento!</button>
+                <button type="submit" class="btn-submit">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.5rem;"></i> Enviar Pedido por WhatsApp
+                </button>
             </form>
         </div>
     </section>
@@ -452,13 +537,12 @@
         </div>
     </footer>
 
-    <!-- Script simple para que los botones de producto rellenen el formulario -->
+    <!-- Scripts -->
     <script>
+        // Función para seleccionar producto desde las tarjetas y bajar al formulario
         function seleccionarProducto(nombreProducto) {
-            // Desplazarse a la sección de pedidos
             document.getElementById('pedidos').scrollIntoView({ behavior: 'smooth' });
             
-            // Seleccionar el producto en el menú desplegable
             const select = document.getElementById('producto');
             for (let i = 0; i < select.options.length; i++) {
                 if (select.options[i].text.includes(nombreProducto)) {
@@ -467,6 +551,39 @@
                 }
             }
         }
+
+        // Capturar el formulario y enviar a WhatsApp
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita que la página se recargue
+
+            // Obtener los valores del formulario
+            const nombre = document.getElementById('nombre').value;
+            const producto = document.getElementById('producto').value;
+            const cantidad = document.getElementById('cantidad').value;
+            const direccion = document.getElementById('direccion').value;
+            const fecha = document.getElementById('fecha').value.replace('T', ' a las '); // Formatear fecha
+            const notas = document.getElementById('notas').value || "Ninguna";
+
+            // Número de WhatsApp destino (Código de país 502 de Guatemala + número del CMI)
+            // Se quitan los guiones del 5570-6564 para que funcione
+            const numeroWhatsApp = "50255706564"; 
+
+            // Construir el mensaje con saltos de línea (%0A)
+            const mensaje = ¡Hola Sweet Bites! 🍓 Quisiera hacer el siguiente pedido:%0A%0A +
+                            *Nombre:* ${nombre}%0A +
+                            *Producto:* ${producto}%0A +
+                            *Cantidad:* ${cantidad}%0A +
+                            *Dirección:* ${direccion}%0A +
+                            *Fecha/Hora:* ${fecha}%0A +
+                            *Notas:* ${notas};
+
+            // Crear la URL de WhatsApp y abrirla en una nueva pestaña
+            const url = https://wa.me/${numeroWhatsApp}?text=${mensaje};
+            window.open(url, '_blank');
+            
+            // Opcional: Limpiar el formulario después de enviar
+            // this.reset(); 
+        });
     </script>
 </body>
-</html>       
+</html>
